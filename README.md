@@ -34,6 +34,9 @@ Identify the user SID that you want to copy from and the user SID of the destina
 Launch the program and input the names for the input file, the output file and the source and target SIDs. The new text file should be created.
 
 ## Step four
+Open the output file with Notepad++, right click on the bottom right where it says the format is UTF-8 and switch to UTF-16 LE, then save. This step is supposed to dissapear once the program will be able to output directly to UTF-16 LE.
+
+## Step five
 Import the permissions from the text file using the "icacls" command. You can do it as follows: ```icacls <parent> /restore <output>```. Beware:
 - The ```<parent>``` directory should be the parent of the target file system node. For example, you exported the folder ```D:/lorem/ipsum``` and all its subfolders and files. At import, the path should be ```D:/lorem/```, because the ```icacls``` command will attempt to find the folder ```ipsum``` inside ```lorem```. Indicate its parent node, not itself like in the export.
 - ```<output>``` should be the text file outputted by the program
